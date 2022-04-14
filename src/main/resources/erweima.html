@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码生成</title>
+    <script src="js/jquery2.1.4.js"></script>
+    <script src="js/jquery.qrcode.js"></script>
+    <!--   有上面两个 js文件，就足够生成二维码， 下面这是汉化包js  -->
+    <script src="js/utf.js"></script>
+</head>
+<body>
+<div id="qrcode"></div>
+<script>
+    <!--  二维码信息的设置  -->
+    var config ={
+        width:200,
+        height:200,
+        text: "http://www.baidu.com", //text就表示二维码中存储的数据  必须传递
+        correctLevel: 1,  // 取值为0|1|2|3 表示二维码的纠错级别0:L/1:M/2:Q/3:H ,默认0  可选参数
+        background:"#FFFFFF",//默认白色, 表示二维码的后景颜色 可选参数
+        foreground:"#000000",//默认黑色, 表示二维码的前景颜色 可选参数
+    };
+    // jq 找到id 为qrcode的 div，执行 二维码生成
+    $("#qrcode").qrcode(config);
+
+</script>
+</body>
+</html>
